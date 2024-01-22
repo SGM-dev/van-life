@@ -1,12 +1,7 @@
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <h1>Hello world!</h1>
-    </BrowserRouter>
-  );
+  return <h1>Hello, React Router!</h1>;
 }
 
 export default App;
