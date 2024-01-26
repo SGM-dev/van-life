@@ -7,8 +7,10 @@ export default {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
-        "gray-40": "#4D4D4D",
-        "black-40": "#161616",
+        "gray-510": "#4D4D4D",
+        "black-910": "#161616",
+        "gray-350": "#AAA",
+        "black-920": "#252525",
       },
     },
   },
