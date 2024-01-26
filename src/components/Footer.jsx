@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="bg-black-920 absolute inset-x-0 bottom-0 px-28 py-6">
-      <p className="font-inter text-gray-350 text-center text-sm font-medium">
+    <footer className="absolute inset-x-0 bottom-0 bg-black-920 px-28 py-6">
+      <p className="text-center font-inter text-sm font-medium text-gray-350">
         Ⓒ 2022 #VANLIFE
       </p>
     </footer>
