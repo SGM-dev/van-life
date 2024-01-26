@@ -11,11 +11,13 @@ export default {
         "black-910": "#161616",
         "gray-350": "#AAA",
         "black-920": "#252525",
+        lightgray: "#D3D3D3",
       },
       backgroundImage: {
-        home: "src/assets/mountain.png",
+        home: "linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url(src/assets/mountain.png)",
       },
     },
   },
   plugins: [],
 };
+//background: ;

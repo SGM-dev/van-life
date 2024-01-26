@@ -1,5 +1,5 @@
 function Home() {
-  return <h1 className="text-3xl font-bold underline">Home Page</h1>;
+  return <main className={`flex-grow  bg-home px-6 py-16`}></main>;
 }
 
 export default Home;
