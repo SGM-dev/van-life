@@ -12,6 +12,9 @@ export default {
         "gray-350": "#AAA",
         "black-920": "#252525",
       },
+      backgroundImage: {
+        home: "src/assets/mountain.png",
+      },
     },
   },
   plugins: [],
