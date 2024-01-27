@@ -13,7 +13,8 @@ function About() {
           <p>
             Our mission is to enliven your road trip with the perfect travel van
             rental. Our vans are recertified before each trip to ensure your
-            travel plans can go off without a hitch. (Hitch costs extra 😉)
+            travel plans can go off without a hitch.
+            <br /> (Hitch costs extra 😉)
           </p>
           <br />
           <p>
@@ -21,6 +22,15 @@ function About() {
             of touring the world on 4 wheels.
           </p>
         </article>
+        <section className="bg-orange-120 mt-14 rounded px-8 py-9 font-inter">
+          <h2 className="self-center text-2xl font-bold">
+            Your destination is waiting.
+            <br /> Your van is ready.
+          </h2>
+          <button className="mt-6 rounded-lg bg-black-910 px-6 py-2 text-base font-bold text-white">
+            Explore our vans
+          </button>
+        </section>
       </section>
     </main>
   );
