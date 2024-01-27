@@ -10,7 +10,7 @@ function Home() {
         Add adventure to your life by joining the #vanlife movement. Rent the
         perfect van to make your perfect road trip.
       </p>
-      <button className="bg-orange-430 mt-12 self-center rounded px-36 py-3 text-center text-base font-bold">
+      <button className="mt-12 self-center rounded bg-orange-430 px-36 py-3 text-center text-base font-bold">
         Find your van
       </button>
     </main>
