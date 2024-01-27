@@ -12,6 +12,7 @@ export default {
         "gray-350": "#AAA",
         "black-920": "#252525",
         lightgray: "#D3D3D3",
+        "orange-430": "#FF8C38",
       },
       backgroundImage: {
         home: "linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url(src/assets/mountain.png)",
