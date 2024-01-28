@@ -5,7 +5,7 @@ function About() {
       <img
         src={aboutImg}
         alt="Man sitting on the roof of a van"
-        className=" w-full object-cover"
+        className=" mx-auto my-0"
       />
       <section className="px-7 py-12 font-inter">
         <h1 className="text-3xl font-bold text-black-910">
