@@ -22,7 +22,7 @@ function About() {
             of touring the world on 4 wheels.
           </p>
         </article>
-        <section className="bg-orange-120 mt-14 rounded px-8 py-9 font-inter">
+        <section className="mt-14 rounded bg-orange-120 px-8 py-9 font-inter">
           <h2 className="self-center text-2xl font-bold">
             Your destination is waiting.
             <br /> Your van is ready.
