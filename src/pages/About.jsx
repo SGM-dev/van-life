@@ -1,9 +1,11 @@
+import aboutImg from "../assets/tent-on-van.png";
 function About() {
   return (
     <main className="flex-grow bg-orange-50 ">
       <img
-        src="../src/assets/tent-on-van.png"
+        src={aboutImg}
         alt="Man sitting on the roof of a van"
+        className=" w-full object-cover"
       />
       <section className="px-7 py-12 font-inter">
         <h1 className="text-3xl font-bold text-black-910">
