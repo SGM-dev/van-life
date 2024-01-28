@@ -2,7 +2,7 @@ function About() {
   return (
     <main className="flex-grow bg-orange-50 ">
       <img
-        src="src/assets/tent-on-van.png"
+        src="./src/assets/tent-on-van.png"
         alt="Man sitting on the roof of a van"
       />
       <section className="px-7 py-12 font-inter">
