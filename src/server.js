@@ -1,4 +1,4 @@
-import { createServer, Model } from "miragejs/server";
+import { createServer, Model } from "miragejs";
 
 createServer({
   models: {
