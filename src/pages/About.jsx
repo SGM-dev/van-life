@@ -16,7 +16,7 @@ function About() {
         <article className="mt-8 text-base font-medium">
           <p>
             Our mission is to enliven your road trip with the perfect travel van
-            rental. Our vans are recertified before each trip to ensure your
+            rental. Our vans are re-certified before each trip to ensure your
             travel plans can go off without a hitch.
             <br /> (Hitch costs extra 😉)
           </p>
