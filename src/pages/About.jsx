@@ -1,11 +1,13 @@
 import aboutImg from "../assets/tent-on-van.png";
+import { Link } from "react-router-dom";
+
 function About() {
   return (
     <main className="flex-grow bg-orange-50 ">
       <img
         src={aboutImg}
         alt="Man sitting on the roof of a van"
-        className=" mx-auto my-0"
+        className=" mx-auto my-0 w-full"
       />
       <section className="px-7 py-12 font-inter">
         <h1 className="text-3xl font-bold text-black-910">
@@ -25,13 +27,16 @@ function About() {
           </p>
         </article>
         <section className="mt-14 rounded bg-orange-120 px-8 py-9 font-inter">
-          <h2 className="self-center text-2xl font-bold">
+          <h2 className="mb-6 self-center text-2xl font-bold">
             Your destination is waiting.
             <br /> Your van is ready.
           </h2>
-          <button className="mt-6 rounded-lg bg-black-910 px-6 py-2 text-base font-bold text-white">
+          <Link
+            className=" rounded-lg bg-black-910 px-5 py-3 text-base font-bold text-white"
+            to={"/vans"}
+          >
             Explore our vans
-          </button>
+          </Link>
         </section>
       </section>
     </main>

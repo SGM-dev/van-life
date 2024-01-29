@@ -18,6 +18,16 @@ function Navbar() {
         >
           About
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? `text-black-910 hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
+              : `hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
+          }
+          to={"/vans"}
+        >
+          Vans
+        </NavLink>
       </nav>
     </header>
   );
