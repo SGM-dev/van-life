@@ -7,7 +7,7 @@ function About() {
       <img
         src={aboutImg}
         alt="Man sitting on the roof of a van"
-        className=" mx-auto my-0 w-full"
+        className="mx-auto my-0 w-full"
       />
       <section className="px-7 py-12 font-inter">
         <h1 className="text-3xl font-bold text-black-910">
@@ -32,7 +32,7 @@ function About() {
             <br /> Your van is ready.
           </h2>
           <Link
-            className=" rounded-lg bg-black-910 px-5 py-3 text-base font-bold text-white"
+            className="rounded-lg bg-black-910 px-5 py-3 text-base font-bold text-white"
             to={"/vans"}
           >
             Explore our vans

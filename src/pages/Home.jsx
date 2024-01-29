@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <main
@@ -10,9 +12,12 @@ function Home() {
         Add adventure to your life by joining the #vanlife movement. Rent the
         perfect van to make your perfect road trip.
       </p>
-      <button className="mt-12 self-center rounded bg-orange-430 px-36 py-3 text-center text-base font-bold">
+      <Link
+        className="mt-12 self-center rounded bg-orange-430 px-36 py-3 text-center text-base font-bold"
+        to={"/vans"}
+      >
         Find your van
-      </button>
+      </Link>
     </main>
   );
 }
