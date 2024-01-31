@@ -27,10 +27,17 @@ function Vans() {
   const vanElements = vans.map((van) => {
     return (
       <div key={van.id} className="card max-w-80 text-center">
-        <Link to={`/vans/${van.id}`}>
-          <img src={van.imageUrl} className="max-h-80 rounded" />
+        <Link
+          to={`/vans/${van.id}`}
+          aria-label={`View details for ${van.name} priced at $${van.price} per day`}
+        >
+          <img
+            src={van.imageUrl}
+            className="max-h-80 rounded"
+            alt={`Image of ${van.name}`}
+          />
           <div className="van-info my-2 flex flex-col justify-between gap-2 text-sm font-semibold text-black-910 sm:flex-row sm:gap-6 sm:text-base">
-            <h3 className="text-left">{van.name}</h3>
+            <p className="text-left">{van.name}</p>
             <div className="van-price flex items-center sm:flex-col sm:text-right">
               <h4>${van.price}</h4>
               <p className="price-unit font-prompt text-xs font-normal sm:text-sm">
