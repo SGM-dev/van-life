@@ -1,4 +1,8 @@
+import { useParams } from "react-router-dom";
+
 function VanDetail() {
+  const params = useParams();
+  console.log(params);
   return <h1>Van detail page goes here</h1>;
 }
 
