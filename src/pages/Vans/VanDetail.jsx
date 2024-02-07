@@ -27,13 +27,13 @@ function VanDetail() {
   }, [params.id]);
 
   return (
-    <main className="grid flex-grow items-center gap-5 bg-orange-50 p-6 font-inter sm:grid-cols-2">
+    <main className="grid flex-grow items-center gap-5 bg-orange-50 p-6 font-inter sm:grid-cols-2 sm:justify-items-center">
       {van ? (
         <>
           <img
             src={van.imageUrl}
             alt={`Picture of ${van.name} van`}
-            className="rounded"
+            className="rounded lg:max-w-lg"
           />
           <div className="mt-4 flex flex-col justify-between gap-2 sm:gap-4">
             <p
