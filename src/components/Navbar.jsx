@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "/logo.svg";
 
 function Navbar() {
-  const activeClass = `text-black-910 hover:text-black-910 hover:underline focus:text-black-910 focus:underline`;
+  const activeClass = `text-black-910`;
   const defaultClass = `hover:text-black-910 hover:underline focus:text-black-910 focus:underline`;
 
   return (

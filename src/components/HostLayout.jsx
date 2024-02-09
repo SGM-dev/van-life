@@ -1,18 +1,16 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function HostLayout() {
-  const { pathname } = useLocation();
-  const activeClass = `text-black-910 hover:text-black-910 hover:underline focus:text-black-910 focus:underline`;
+  const activeClass = `text-black-910`;
   const defaultClass = `hover:text-black-910 hover:underline focus:text-black-910 focus:underline`;
 
   return (
     <div className=" px-6 py-9">
       <nav className="nav-links flex gap-5 font-inter text-base font-semibold text-gray-510">
         <NavLink
-          className={({ isActive }) =>
-            isActive && pathname === "/host" ? activeClass : defaultClass
-          }
+          className={({ isActive }) => (isActive ? activeClass : defaultClass)}
           to="/host"
+          end
         >
           Dashboard
         </NavLink>
