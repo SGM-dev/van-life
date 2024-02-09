@@ -11,7 +11,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? `text-black-910 hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
+              ? `text-black-910 underline hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
               : `hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
           }
           to="/host"
@@ -21,7 +21,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? `text-black-910 hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
+              ? `text-black-910 underline hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
               : `hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
           }
           to="/about"
@@ -31,7 +31,7 @@ function Navbar() {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? `text-black-910 hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
+              ? `text-black-910 underline hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
               : `hover:text-black-910 hover:underline focus:text-black-910 focus:underline`
           }
           to={"/vans"}

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageLayout from "./components/PageLayout.jsx";
+import HostLayout from "./components/HostLayout.jsx";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Host/Dashboard.jsx";
 import Income from "./pages/Host/Income.jsx";
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/host" element={<Dashboard />}>
+          <Route path="/host" element={<HostLayout />}>
             <Route path="/host/income" element={<Income />} />
             <Route path="/host/reviews" element={<Reviews />} />
           </Route>
