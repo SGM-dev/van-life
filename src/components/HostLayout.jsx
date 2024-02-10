@@ -22,6 +22,12 @@ function HostLayout() {
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? activeClass : defaultClass)}
+          to="/host/vans"
+        >
+          Vans
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? activeClass : defaultClass)}
           to={"/host/reviews"}
         >
           Reviews
