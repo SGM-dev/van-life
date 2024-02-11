@@ -42,7 +42,13 @@ function HostVans() {
   return (
     <main className="flex-grow bg-orange-50 py-6 font-inter ">
       <h2 className=" text-2xl font-bold">Your listed vans</h2>
-      <div className="mt-4 flex flex-col gap-5">{hostVanElements}</div>
+      <div className="mt-4 flex flex-col gap-5">
+        {hostVans.length > 0 ? (
+          hostVanElements
+        ) : (
+          <h2 className="mx-auto font-inter text-3xl font-bold">Loading...</h2>
+        )}
+      </div>
     </main>
   );
 }
