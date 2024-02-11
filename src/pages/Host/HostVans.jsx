@@ -40,7 +40,7 @@ function HostVans() {
   });
 
   return (
-    <main className="flex-grow bg-orange-50 py-6 font-inter ">
+    <main className=" justify-center bg-orange-50 py-6 font-inter">
       <h2 className=" text-2xl font-bold">Your listed vans</h2>
       <div className="mt-4 flex flex-col gap-5">
         {hostVans.length > 0 ? (
