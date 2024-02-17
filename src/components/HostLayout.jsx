@@ -9,26 +9,26 @@ function HostLayout() {
       <nav className="nav-links flex gap-5 font-inter text-base font-semibold text-gray-510">
         <NavLink
           className={({ isActive }) => (isActive ? activeClass : defaultClass)}
-          to="/host"
+          to="."
           end
         >
           Dashboard
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? activeClass : defaultClass)}
-          to="/host/income"
+          to="income"
         >
           Income
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? activeClass : defaultClass)}
-          to="/host/vans"
+          to="vans"
         >
           Vans
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? activeClass : defaultClass)}
-          to={"/host/reviews"}
+          to={"reviews"}
         >
           Reviews
         </NavLink>
