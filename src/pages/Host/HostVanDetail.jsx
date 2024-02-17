@@ -15,7 +15,7 @@ function HostVanDetail() {
     if (!loading) {
       setVan(data.vans[0]);
     }
-  }, [loading]);
+  }, [loading, data]);
 
   console.log(van);
 
