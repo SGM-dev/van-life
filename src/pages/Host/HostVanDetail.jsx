@@ -13,11 +13,9 @@ function HostVanDetail() {
 
   useEffect(() => {
     if (!loading) {
-      setVan(data.vans[0]);
+      setVan(data.vans);
     }
   }, [loading, data]);
-
-  console.log(van);
 
   const vanTypeBgClass = {
     simple: "bg-orange-610",
