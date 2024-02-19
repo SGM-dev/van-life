@@ -1,4 +1,4 @@
-import { useParams, Outlet, Link } from "react-router-dom";
+import { useParams, Outlet, Link, NavLink } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 function HostVanDetail() {
@@ -12,6 +12,9 @@ function HostVanDetail() {
     luxury: "bg-black-910 ",
   };
 
+  const activeClass = `text-black-910 underline underline-offset-2 font-bold`;
+  const defaultClass = `hover:text-black-910 hover:underline hover:font-bold focus:text-black-910 focus:underline underline-offset-2`;
+
   return (
     <section className=" py-4">
       <Link
@@ -22,7 +25,7 @@ function HostVanDetail() {
       >
         &larr; Back to all vans
       </Link>
-      <main className=" mt-4 rounded bg-white p-5 font-inter">
+      <main className=" mt-4 flex flex-col gap-4 rounded bg-white p-5 font-inter">
         {!loading ? (
           data.vans && (
             <>
@@ -41,14 +44,39 @@ function HostVanDetail() {
                   <h2 className="text-2xl font-bold text-black-910">
                     {data.vans.name}
                   </h2>
-                  <div className="van-price flex font-inter text-black-910">
+                  <div className="van-price flex text-black-910">
                     <h4 className="font-bold">${data.vans.price}</h4>
-                    <p className="price-unit font-prompt text-base font-light">
-                      /day
-                    </p>
+                    <p className="price-unit text-base font-light">/day</p>
                   </div>
                 </div>
               </div>
+              <nav className="nav-links flex gap-5 font-inter text-base font-medium text-gray-510">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? activeClass : defaultClass
+                  }
+                  to="."
+                  end
+                >
+                  Details
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? activeClass : defaultClass
+                  }
+                  to="pricing"
+                >
+                  Pricing
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? activeClass : defaultClass
+                  }
+                  to="photos"
+                >
+                  Photos
+                </NavLink>
+              </nav>
               <Outlet />
             </>
           )
