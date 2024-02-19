@@ -16,7 +16,7 @@ function HostVanDetail() {
   const defaultClass = `hover:text-black-910 hover:underline hover:font-bold focus:text-black-910 focus:underline underline-offset-2`;
 
   return (
-    <section className=" py-4">
+    <section className=" h-full py-4">
       <Link
         className=" gap-5 font-inter text-base font-semibold text-gray-510 hover:text-black-910 hover:underline focus:text-black-910 focus:underline"
         to=".."
@@ -25,7 +25,7 @@ function HostVanDetail() {
       >
         &larr; Back to all vans
       </Link>
-      <main className=" mt-4 flex flex-col gap-4 rounded bg-white p-5 font-inter">
+      <main className=" mt-4 flex flex-col gap-2 rounded bg-white p-5 font-inter">
         {!loading ? (
           data.vans && (
             <>
@@ -77,7 +77,7 @@ function HostVanDetail() {
                   Photos
                 </NavLink>
               </nav>
-              <Outlet />
+              <Outlet context={[data, loading]} />
             </>
           )
         ) : (
