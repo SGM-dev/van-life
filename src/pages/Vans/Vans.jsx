@@ -13,9 +13,15 @@ function Vans() {
     luxury: "bg-black-910 ",
   };
 
+  const filteredVans =
+    !loading &&
+    (typeFilter
+      ? data.vans.filter((van) => van.type === typeFilter)
+      : data.vans);
+
   const vanElements =
     !loading &&
-    data.vans.map((van) => {
+    filteredVans.map((van) => {
       return (
         <div key={van.id} className="card max-w-80 text-center">
           <Link
