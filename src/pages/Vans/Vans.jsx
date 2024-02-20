@@ -53,11 +53,39 @@ function Vans() {
     });
 
   return (
-    <main className="flex-grow bg-orange-50 px-7 py-14 font-inter ">
+    <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
       <h1 className=" text-3xl font-bold text-black-910">
         Explore our van options
       </h1>
-      <section className="container mx-auto my-14 grid grid-cols-2 gap-9 md:grid-cols-3 lg:grid-cols-4">
+      <div className="van-filters mt-4 flex items-center justify-between">
+        <div className="flex gap-3">
+          <Link
+            to="?type=simple"
+            className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-orange-610 hover:text-orange-130 sm:text-sm"
+          >
+            Simple
+          </Link>
+          <Link
+            to="?type=luxury"
+            className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-black-910 hover:text-orange-130 sm:text-sm"
+          >
+            Luxury
+          </Link>
+          <Link
+            to="?type=rugged"
+            className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-teal-800 hover:text-orange-130 sm:text-sm"
+          >
+            Rugged
+          </Link>
+        </div>
+        <Link
+          to="."
+          className=" text-sm font-medium text-gray-510 underline-offset-2 hover:underline"
+        >
+          Clear filters
+        </Link>
+      </div>
+      <section className=" mx-auto my-7 grid grid-cols-2 gap-9 md:grid-cols-3 lg:grid-cols-4">
         {vanElements}
       </section>
     </main>
