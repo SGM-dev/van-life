@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 function Vans() {
   const { data, loading } = useFetch("/api/vans");
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
 
   const vanTypeBgClass = {
     simple: "bg-orange-610",
