@@ -8,6 +8,8 @@ function useFetch(url, options = {}) {
   });
 
   useEffect(() => {
+    let isMounted = true;
+
     const fetchData = async () => {
       try {
         const response = await fetch(url, options);
@@ -17,27 +19,33 @@ function useFetch(url, options = {}) {
           );
         }
         const result = await response.json();
-        if (result) {
+        if (isMounted) {
+          if (result) {
+            setData((prevState) => ({
+              ...prevState,
+              data: result,
+              loading: false,
+            }));
+          } else {
+            setData((prevState) => ({
+              ...prevState,
+              loading: false,
+            }));
+          }
+        }
+      } catch (error) {
+        if (isMounted) {
           setData((prevState) => ({
             ...prevState,
-            data: result,
-            loading: false,
-          }));
-        } else {
-          setData((prevState) => ({
-            ...prevState,
+            error: error.message || "An error occurred during the fetch",
             loading: false,
           }));
         }
-      } catch (error) {
-        setData((prevState) => ({
-          ...prevState,
-          error: error.message || "An error occurred during the fetch",
-          loading: false,
-        }));
       }
     };
     fetchData();
+
+    return () => (isMounted = false);
   }, [url, options]);
   return data;
 }
