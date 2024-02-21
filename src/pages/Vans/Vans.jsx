@@ -72,29 +72,31 @@ function Vans() {
         <div className="flex gap-3">
           <button
             onClick={() => handleFilterChange("type", "simple")}
-            className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-orange-610 hover:text-orange-130 sm:text-sm"
+            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-orange-610 hover:text-orange-130 focus:bg-orange-610 focus:text-orange-130 sm:text-sm ${typeFilter === "simple" && "bg-orange-610 text-orange-130"}`}
           >
             Simple
           </button>
           <button
             onClick={() => handleFilterChange("type", "luxury")}
-            className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-black-910 hover:text-orange-130 sm:text-sm"
+            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-black-910 hover:text-orange-130 focus:bg-black-910 focus:text-orange-130 sm:text-sm ${typeFilter === "luxury" && "bg-black-910 text-orange-130"}`}
           >
             Luxury
           </button>
           <button
             onClick={() => handleFilterChange("type", "rugged")}
-            className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-teal-800 hover:text-orange-130 sm:text-sm"
+            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-teal-800 hover:text-orange-130 focus:bg-teal-800 focus:text-orange-130 sm:text-sm ${typeFilter === "rugged" && "bg-teal-800 text-orange-130"}`}
           >
             Rugged
           </button>
         </div>
-        <button
-          onClick={() => handleFilterChange("type", null)}
-          className=" text-sm font-medium text-gray-510 underline-offset-2 hover:font-semibold hover:underline"
-        >
-          Clear filters
-        </button>
+        {typeFilter && (
+          <button
+            onClick={() => handleFilterChange("type", null)}
+            className=" text-sm font-medium text-gray-510 underline-offset-2 hover:font-semibold hover:underline focus:underline"
+          >
+            Clear filters
+          </button>
+        )}
       </div>
       <section className=" mx-auto my-7 grid grid-cols-2 gap-9 md:grid-cols-3 lg:grid-cols-4">
         {vanElements}
