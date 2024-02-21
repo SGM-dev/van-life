@@ -52,6 +52,17 @@ function Vans() {
       );
     });
 
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  }
+
   return (
     <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
       <h1 className=" text-3xl font-bold text-black-910">
@@ -60,26 +71,26 @@ function Vans() {
       <div className="van-filters mt-4 flex items-center justify-between">
         <div className="flex gap-3">
           <button
-            onClick={() => setSearchParams({ type: "simple" })}
+            onClick={() => handleFilterChange("type", "simple")}
             className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-orange-610 hover:text-orange-130 sm:text-sm"
           >
             Simple
           </button>
           <button
-            onClick={() => setSearchParams({ type: "luxury" })}
+            onClick={() => handleFilterChange("type", "luxury")}
             className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-black-910 hover:text-orange-130 sm:text-sm"
           >
             Luxury
           </button>
           <button
-            onClick={() => setSearchParams({ type: "rugged" })}
+            onClick={() => handleFilterChange("type", "rugged")}
             className="my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-teal-800 hover:text-orange-130 sm:text-sm"
           >
             Rugged
           </button>
         </div>
         <button
-          onClick={() => setSearchParams({})}
+          onClick={() => handleFilterChange("type", null)}
           className=" text-sm font-medium text-gray-510 underline-offset-2 hover:font-semibold hover:underline"
         >
           Clear filters
