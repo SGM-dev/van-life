@@ -25,7 +25,7 @@ function Vans() {
       return (
         <div key={van.id} className="card max-w-80 text-center">
           <Link
-            to={`/vans/${van.id}`}
+            to={van.id}
             aria-label={`View details for ${van.name} priced at $${van.price} per day`}
           >
             <img

@@ -12,7 +12,7 @@ function HostVans() {
           key={van.id}
           className=" flex max-w-full flex-col rounded bg-white p-4"
         >
-          <Link to={`/host/vans/${van.id}`} className="flex gap-4">
+          <Link to={van.id} className="flex gap-4">
             <img
               src={van.imageUrl}
               alt={`Image of ${van.name}`}
