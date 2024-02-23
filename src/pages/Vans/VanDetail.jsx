@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 function VanDetail() {
@@ -14,7 +14,15 @@ function VanDetail() {
   };
 
   return (
-    <main className="grid flex-grow items-center gap-5 bg-orange-50 p-6 font-inter sm:grid-cols-2 sm:justify-items-center">
+    <main className="grid flex-grow items-center gap-5 bg-orange-50 p-6 font-inter  sm:grid-cols-2">
+      <Link
+        className=" justify-start font-inter text-base font-semibold text-gray-510 hover:text-black-910 hover:underline focus:text-black-910 focus:underline sm:col-span-2"
+        to=".."
+        relative="path"
+        end
+      >
+        &larr; Back to all vans
+      </Link>
       {!loading ? (
         <>
           <img
