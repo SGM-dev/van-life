@@ -26,7 +26,7 @@ function Vans() {
         <div key={van.id} className="card max-w-80 text-center">
           <Link
             to={van.id}
-            state={{ search: searchParams.toString() }}
+            state={{ search: `?${searchParams.toString()}` }}
             aria-label={`View details for ${van.name} priced at $${van.price} per day`}
           >
             <img
@@ -73,19 +73,19 @@ function Vans() {
         <div className="flex gap-3">
           <button
             onClick={() => handleFilterChange("type", "simple")}
-            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-orange-610 hover:text-orange-130 focus:bg-orange-610 focus:text-orange-130 sm:text-sm ${typeFilter === "simple" && "bg-orange-610 text-orange-130"}`}
+            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded px-4 py-2 text-center align-middle text-xs font-semibold capitalize hover:bg-orange-610 hover:text-orange-130 focus:bg-orange-610 focus:text-orange-130 sm:text-sm ${typeFilter === "simple" ? "bg-orange-610 text-orange-130" : "bg-orange-130 text-gray-510"}`}
           >
             Simple
           </button>
           <button
             onClick={() => handleFilterChange("type", "luxury")}
-            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-black-910 hover:text-orange-130 focus:bg-black-910 focus:text-orange-130 sm:text-sm ${typeFilter === "luxury" && "bg-black-910 text-orange-130"}`}
+            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded px-4 py-2 text-center align-middle text-xs font-semibold capitalize hover:bg-black-910 hover:text-orange-130 focus:bg-black-910 focus:text-orange-130 sm:text-sm ${typeFilter === "luxury" ? "bg-black-910 text-orange-130" : "bg-orange-130 text-gray-510"}`}
           >
             Luxury
           </button>
           <button
             onClick={() => handleFilterChange("type", "rugged")}
-            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded bg-orange-130 px-4 py-2 text-center align-middle text-xs font-semibold capitalize text-gray-510 hover:bg-teal-800 hover:text-orange-130 focus:bg-teal-800 focus:text-orange-130 sm:text-sm ${typeFilter === "rugged" && "bg-teal-800 text-orange-130"}`}
+            className={`my-1 max-w-20 flex-shrink flex-grow-0 rounded px-4 py-2 text-center align-middle text-xs font-semibold capitalize hover:bg-teal-800 hover:text-orange-130 focus:bg-teal-800 focus:text-orange-130 sm:text-sm ${typeFilter === "rugged" ? "bg-teal-800 text-orange-130" : "bg-orange-130 text-gray-510"}`}
           >
             Rugged
           </button>

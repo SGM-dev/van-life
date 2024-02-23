@@ -1,8 +1,9 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 function VanDetail() {
   const params = useParams();
+  const location = useLocation();
 
   // const [van, setVan] = useState(null);
 
@@ -13,11 +14,13 @@ function VanDetail() {
     luxury: "bg-black-910 ",
   };
 
+  const search = location.state?.search || "";
+
   return (
     <main className="grid flex-grow items-center gap-5 bg-orange-50 p-6 font-inter  sm:grid-cols-2">
       <Link
         className=" justify-start font-inter text-base font-semibold text-gray-510 hover:text-black-910 hover:underline focus:text-black-910 focus:underline sm:col-span-2"
-        to=".."
+        to={`..${search}`}
         relative="path"
         end={true}
       >
