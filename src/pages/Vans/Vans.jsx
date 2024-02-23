@@ -26,6 +26,7 @@ function Vans() {
         <div key={van.id} className="card max-w-80 text-center">
           <Link
             to={van.id}
+            state={{ search: searchParams.toString() }}
             aria-label={`View details for ${van.name} priced at $${van.price} per day`}
           >
             <img
