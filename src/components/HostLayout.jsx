@@ -10,7 +10,7 @@ function HostLayout() {
         <NavLink
           className={({ isActive }) => (isActive ? activeClass : defaultClass)}
           to="."
-          end
+          end={true}
         >
           Dashboard
         </NavLink>

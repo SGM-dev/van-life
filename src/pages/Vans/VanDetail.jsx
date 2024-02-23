@@ -19,7 +19,7 @@ function VanDetail() {
         className=" justify-start font-inter text-base font-semibold text-gray-510 hover:text-black-910 hover:underline focus:text-black-910 focus:underline sm:col-span-2"
         to=".."
         relative="path"
-        end
+        end={true}
       >
         &larr; Back to all vans
       </Link>
@@ -31,11 +31,11 @@ function VanDetail() {
             className="rounded lg:max-w-lg"
           />
           <div className="mt-4 flex flex-col justify-between gap-3 sm:gap-4">
-            <p
-              className={`van-type text-orange-130 ${vanTypeBgClass[data.vans.type]} my-1 max-w-20 flex-shrink flex-grow-0 rounded px-4 py-2 text-center align-middle text-xs font-semibold capitalize sm:text-sm`}
+            <i
+              className={`van-type text-orange-130 ${vanTypeBgClass[data.vans.type]} my-1 max-w-20 flex-shrink flex-grow-0 rounded px-4 py-2 text-center align-middle text-xs font-semibold capitalize not-italic sm:text-sm`}
             >
               {data.vans.type}
-            </p>
+            </i>
             <h2 className="text-2xl font-bold text-black-910">
               {data.vans.name}
             </h2>

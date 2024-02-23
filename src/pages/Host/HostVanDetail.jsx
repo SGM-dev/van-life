@@ -21,7 +21,7 @@ function HostVanDetail() {
         className=" gap-5 font-inter text-base font-semibold text-gray-510 hover:text-black-910 hover:underline focus:text-black-910 focus:underline"
         to=".."
         relative="path"
-        end
+        end={true}
       >
         &larr; Back to all vans
       </Link>
@@ -56,7 +56,7 @@ function HostVanDetail() {
                     isActive ? activeClass : defaultClass
                   }
                   to="."
-                  end
+                  end={true}
                 >
                   Details
                 </NavLink>
