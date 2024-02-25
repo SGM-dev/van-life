@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import Logo from "/logo.svg";
+import Avatar from "/avatar.svg";
 
 function Navbar() {
   const activeClass = `text-black-910 underline underline-offset-2 font-bold`;
@@ -29,6 +30,13 @@ function Navbar() {
         >
           Vans
         </NavLink>
+        <Link to={"/login"}>
+          <img
+            src={Avatar}
+            alt="User Avatar"
+            className="logo inline-flex items-center"
+          />
+        </Link>
       </nav>
     </header>
   );
