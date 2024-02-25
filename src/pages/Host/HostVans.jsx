@@ -1,12 +1,50 @@
 import { Link } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
+import { useState, useEffect } from "react";
+import { getHostVans } from "../../api";
 
 function HostVans() {
-  const { data, loading } = useFetch("/api/host/vans");
+  const [vans, setVans] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function loadHostVans() {
+      setLoading(true);
+      try {
+        const data = await getHostVans();
+        setVans(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadHostVans();
+  }, []);
+
+  if (loading) {
+    return (
+      <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
+        <h2 className=" mx-auto self-center font-inter text-3xl font-bold">
+          Loading...
+        </h2>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
+        <h2 className=" mx-auto self-center font-inter text-3xl font-bold">
+          There was an Error: {error.message}
+        </h2>
+      </main>
+    );
+  }
 
   const hostVanElements =
-    !loading &&
-    data.vans.map((van) => {
+    vans &&
+    vans.map((van) => {
       return (
         <div
           key={van.id}
@@ -30,13 +68,7 @@ function HostVans() {
   return (
     <main className=" justify-center bg-orange-50 py-6 font-inter">
       <h2 className=" text-2xl font-bold">Your listed vans</h2>
-      <div className="mt-4 flex flex-col gap-5">
-        {!loading ? (
-          hostVanElements
-        ) : (
-          <h2 className="mx-auto font-inter text-3xl font-bold">Loading...</h2>
-        )}
-      </div>
+      <div className="mt-4 flex flex-col gap-5">{hostVanElements}</div>
     </main>
   );
 }
