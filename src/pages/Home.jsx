@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <main
-      className={`flex flex-grow flex-col justify-center bg-home bg-cover px-8 py-14  font-inter text-white`}
+      className={`flex flex-grow flex-col justify-center bg-home bg-cover px-8 py-14 font-inter  text-white sm:items-center`}
     >
       <h1 className=" text-4xl font-extrabold ">
         You got the travel plans, we got the travel vans.

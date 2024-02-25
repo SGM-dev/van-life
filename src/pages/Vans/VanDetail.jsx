@@ -15,6 +15,7 @@ function VanDetail() {
   };
 
   const search = location.state?.search || "";
+  const type = location.state?.type || "all";
 
   return (
     <main className="grid flex-grow items-center gap-5 bg-orange-50 p-6 font-inter  sm:grid-cols-2">
@@ -24,7 +25,7 @@ function VanDetail() {
         relative="path"
         end={true}
       >
-        &larr; Back to all vans
+        &larr; Back to {type} vans
       </Link>
       {!loading ? (
         <>
