@@ -34,8 +34,11 @@ function HostVanDetail() {
 
   if (loading) {
     return (
-      <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
-        <h2 className=" mx-auto self-center font-inter text-3xl font-bold">
+      <main className="flex flex-grow items-center justify-center bg-orange-50 px-7 py-4 font-inter">
+        <h2
+          className=" mx-auto self-center font-inter text-3xl font-bold"
+          aria-live="polite"
+        >
           Loading...
         </h2>
       </main>
@@ -44,14 +47,16 @@ function HostVanDetail() {
 
   if (error) {
     return (
-      <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
-        <h2 className=" mx-auto self-center font-inter text-3xl font-bold">
-          There was an Error: {error.message}
+      <main className="flex flex-grow items-center justify-center bg-orange-50 px-7 py-4 font-inter">
+        <h2
+          className=" mx-auto self-center font-inter text-3xl font-bold"
+          aria-live="assertive"
+        >
+          Loading...
         </h2>
       </main>
     );
   }
-
   return (
     van && (
       <section className=" h-full py-4">
