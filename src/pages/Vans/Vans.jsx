@@ -1,11 +1,28 @@
 import { Link, useSearchParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
+import { getVans } from "../../api";
+import { useEffect, useState } from "react";
 
 function Vans() {
-  const { data, loading } = useFetch("/api/vans");
-
+  const [vans, setVans] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
+
+  useEffect(() => {
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getVans();
+        setVans(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadVans();
+  }, []);
 
   const vanTypeBgClass = {
     simple: "bg-orange-610",
@@ -14,13 +31,10 @@ function Vans() {
   };
 
   const filteredVans =
-    !loading &&
-    (typeFilter
-      ? data.vans.filter((van) => van.type === typeFilter)
-      : data.vans);
+    vans && (typeFilter ? vans.filter((van) => van.type === typeFilter) : vans);
 
   const vanElements =
-    !loading &&
+    vans &&
     filteredVans.map((van) => {
       return (
         <div key={van.id} className="card max-w-80 text-center">
@@ -62,6 +76,26 @@ function Vans() {
       }
       return prevParams;
     });
+  }
+
+  if (loading) {
+    return (
+      <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
+        <h2 className=" mx-auto self-center font-inter text-3xl font-bold">
+          Loading...
+        </h2>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="flex-grow bg-orange-50 px-7 py-4 font-inter ">
+        <h2 className=" mx-auto self-center font-inter text-3xl font-bold">
+          There was an Error: {error.message}
+        </h2>
+      </main>
+    );
   }
 
   return (
