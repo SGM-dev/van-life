@@ -25,7 +25,7 @@ function Login() {
   return (
     <main className="container mx-auto my-0 flex flex-grow flex-col justify-center gap-4 px-8 font-inter">
       {location.state?.message && (
-        <h3 className=" mb-2 text-center text-xl font-semibold antialiased sm:gap-6">
+        <h3 className=" mb-2 text-center text-xl font-semibold text-red-700 antialiased sm:gap-6">
           {location.state.message}
         </h3>
       )}
