@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 function Login() {
@@ -6,6 +6,8 @@ function Login() {
     email: "",
     password: "",
   });
+
+  const location = useLocation();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,6 +24,11 @@ function Login() {
 
   return (
     <main className="container mx-auto my-0 flex flex-grow flex-col justify-center gap-4 px-8 font-inter">
+      {location.state?.message && (
+        <h3 className=" mb-2 text-center text-xl font-semibold antialiased sm:gap-6">
+          {location.state.message}
+        </h3>
+      )}
       <h1 className=" mb-2 text-center text-3xl font-bold sm:gap-6">
         Sign in to your account
       </h1>
