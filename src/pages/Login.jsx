@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { loginUser } from "../api";
 
 function Login() {
   const [loginFormData, setLoginFormData] = useState({
@@ -11,7 +12,9 @@ function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginFormData);
+    loginUser(loginFormData).then((data) => {
+      console.log(data);
+    });
   }
 
   function handleChange(e) {
