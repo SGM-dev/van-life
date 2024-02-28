@@ -6,6 +6,10 @@ function Navbar() {
   const activeClass = `text-black-910 underline underline-offset-2 font-bold`;
   const defaultClass = `hover:text-black-910 hover:underline hover:font-bold focus:text-black-910 focus:underline underline-offset-2`;
 
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
+  }
+
   return (
     <header className="flex items-center justify-between px-6 py-9">
       <Link to={"/"}>
@@ -37,6 +41,12 @@ function Navbar() {
             className="logo inline-flex items-center"
           />
         </Link>
+        <button
+          className=" rounded bg-orange-430 px-1 py-1 text-base font-medium text-white"
+          onClick={fakeLogOut}
+        >
+          Log Out
+        </button>
       </nav>
     </header>
   );

@@ -1,4 +1,4 @@
-import { createServer, Model } from "miragejs";
+import { createServer, Model, Response } from "miragejs";
 
 createServer({
   models: {
@@ -34,7 +34,7 @@ createServer({
       name: "Reliable Red",
       price: 100,
       description:
-        "Reliable Red is a van that was made for traveling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
+        "Reliable Red is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png",
       type: "luxury",
@@ -73,6 +73,7 @@ createServer({
       type: "rugged",
       hostId: "123",
     });
+
     server.create("user", {
       id: "123",
       email: "b@b.com",
@@ -108,7 +109,6 @@ createServer({
     this.post("/login", (schema, request) => {
       const { email, password } = JSON.parse(request.requestBody);
       const foundUser = schema.users.findBy({ email, password });
-
       if (!foundUser) {
         return new Response(
           401,
@@ -116,6 +116,7 @@ createServer({
           { message: "No user with those credentials found!" },
         );
       }
+
       foundUser.password = undefined;
       return {
         user: foundUser,
