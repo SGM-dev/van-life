@@ -13,6 +13,8 @@ function Login() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const from = location.state?.from || "/host";
+
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting");
@@ -20,7 +22,7 @@ function Login() {
       .then((data) => {
         setError(null);
         localStorage.setItem("loggedIn", true);
-        navigate("/host", { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError(err);

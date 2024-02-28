@@ -7,7 +7,7 @@ function Navbar() {
   const defaultClass = `hover:text-black-910 hover:underline hover:font-bold focus:text-black-910 focus:underline underline-offset-2`;
 
   function fakeLogOut() {
-    localStorage.removeItem("loggedin");
+    localStorage.removeItem("loggedIn");
   }
 
   return (
