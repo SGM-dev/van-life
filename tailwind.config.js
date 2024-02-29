@@ -17,6 +17,7 @@ export default {
         "orange-120": "#FFCC8D",
         "orange-130": "#FFEAD0",
         "orange-610": "#E17654",
+        "orange-630": "#FFDDB2",
       },
       backgroundImage: {
         home: "linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url(../src/assets/mountain.png)",

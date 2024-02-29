@@ -10,12 +10,14 @@ function Navbar() {
     localStorage.removeItem("loggedIn");
   }
 
+  const isLoggedIn = localStorage.getItem("loggedIn");
+
   return (
     <header className="flex items-center justify-between px-6 py-9">
       <Link to={"/"}>
         <img src={Logo} alt="VANLIFE Logo" className="logo max-h-4 " />
       </Link>
-      <nav className="nav-links flex gap-5 font-inter text-base font-medium text-gray-510">
+      <nav className="nav-links flex items-center gap-5 font-inter text-base font-medium text-gray-510">
         <NavLink
           className={({ isActive }) => (isActive ? activeClass : defaultClass)}
           to="/host"
@@ -34,19 +36,23 @@ function Navbar() {
         >
           Vans
         </NavLink>
-        <Link to={"/login"}>
-          <img
-            src={Avatar}
-            alt="User Avatar"
-            className="logo inline-flex items-center"
-          />
-        </Link>
-        <button
-          className=" rounded bg-orange-430 px-1 py-1 text-base font-medium text-white"
-          onClick={fakeLogOut}
-        >
-          Log Out
-        </button>
+        {!isLoggedIn && (
+          <Link to={"/login"}>
+            <img
+              src={Avatar}
+              alt="User Avatar"
+              className="logo inline-flex items-center"
+            />
+          </Link>
+        )}
+        {isLoggedIn && (
+          <button
+            className=" rounded bg-orange-430 px-1 py-1 text-base font-medium text-white"
+            onClick={fakeLogOut}
+          >
+            Log Out
+          </button>
+        )}
       </nav>
     </header>
   );
