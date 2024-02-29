@@ -21,6 +21,7 @@ function Login() {
     loginUser(loginFormData)
       .then((data) => {
         setError(null);
+        console.log(data);
         localStorage.setItem("loggedIn", true);
         navigate(from, { replace: true });
       })
