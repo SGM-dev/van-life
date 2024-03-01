@@ -1,5 +1,5 @@
 import { useParams, Link, useLocation } from "react-router-dom";
-import { getVanDetail } from "../../api";
+import { getVan } from "../../api";
 import { useState, useEffect } from "react";
 
 function VanDetail() {
@@ -13,7 +13,7 @@ function VanDetail() {
     async function loadVanDetail() {
       setLoading(true);
       try {
-        const data = await getVanDetail(params.id);
+        const data = await getVan(params.id);
         setVan(data);
       } catch (err) {
         setError(err);
